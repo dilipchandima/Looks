@@ -12,6 +12,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		548F49BD2960046400AA4434 /* LooksCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F49BC2960046400AA4434 /* LooksCameraManager.swift */; };
+		548F49BF2960054E00AA4434 /* LooksCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 548F49BE2960054E00AA4434 /* LooksCameraManager.m */; };
+		548F49C12960069600AA4434 /* LooksCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F49C02960069600AA4434 /* LooksCamera.swift */; };
 		7699B88040F8A987B510C191 /* libPods-Looks-LooksTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Looks-LooksTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -38,6 +41,10 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Looks/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Looks-LooksTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Looks-LooksTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-Looks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Looks.debug.xcconfig"; path = "Target Support Files/Pods-Looks/Pods-Looks.debug.xcconfig"; sourceTree = "<group>"; };
+		548F49BB2960046300AA4434 /* Looks-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Looks-Bridging-Header.h"; sourceTree = "<group>"; };
+		548F49BC2960046400AA4434 /* LooksCameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LooksCameraManager.swift; path = Looks/LooksCamera/LooksCameraManager.swift; sourceTree = "<group>"; };
+		548F49BE2960054E00AA4434 /* LooksCameraManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LooksCameraManager.m; path = Looks/LooksCamera/LooksCameraManager.m; sourceTree = "<group>"; };
+		548F49C02960069600AA4434 /* LooksCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LooksCamera.swift; path = Looks/LooksCamera/LooksCamera.swift; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Looks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Looks.release.xcconfig"; path = "Target Support Files/Pods-Looks/Pods-Looks.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Looks-LooksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Looks-LooksTests.debug.xcconfig"; path = "Target Support Files/Pods-Looks-LooksTests/Pods-Looks-LooksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Looks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Looks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,12 +123,16 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				548F49C02960069600AA4434 /* LooksCamera.swift */,
+				548F49BE2960054E00AA4434 /* LooksCameraManager.m */,
+				548F49BC2960046400AA4434 /* LooksCameraManager.swift */,
 				13B07FAE1A68108700A75B9A /* Looks */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* LooksTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				548F49BB2960046300AA4434 /* Looks-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -207,7 +218,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -413,7 +424,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				548F49BD2960046400AA4434 /* LooksCameraManager.swift in Sources */,
+				548F49C12960069600AA4434 /* LooksCamera.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				548F49BF2960054E00AA4434 /* LooksCameraManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Looks-LooksTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -459,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-Looks-LooksTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = LooksTests/Info.plist;
@@ -500,6 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.looks.mobile;
 				PRODUCT_NAME = Looks;
+				SWIFT_OBJC_BRIDGING_HEADER = "Looks-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -526,6 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.looks.mobile;
 				PRODUCT_NAME = Looks;
+				SWIFT_OBJC_BRIDGING_HEADER = "Looks-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

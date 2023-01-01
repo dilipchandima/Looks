@@ -1,20 +1,13 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import CameraScreen from './screens/Camera.screen';
+import AppNavigator from './navigation/AppNavigator';
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.root}>
-      <CameraScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-  },
-});
 
 export default App;

@@ -1,22 +1,40 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
-import MyNativeView from 'components/LooksCamera/LooksCamera.component';
+import LooksCamera from 'components/LooksCamera/LooksCamera.component';
+import ScreenContainer from 'components/ScreenContainer';
+import {RESULT_SCREEN} from 'navigation/ScreenNames';
 import {useImage} from 'store/useImage';
 
-const CameraScreen = () => {
+const {width} = Dimensions.get('screen');
+
+const CameraScreen = ({navigation}) => {
   const {setImage} = useImage();
+
+  const onCapture = (url: string) => {
+    setImage(url);
+    navigation.navigate(RESULT_SCREEN);
+  };
+
   return (
-    <View style={styles.root}>
-      <MyNativeView setImage={setImage} />
-    </View>
+    <ScreenContainer>
+      <LooksCamera
+        cameraViewStyle={styles.cameraViewStyle}
+        containerStyle={styles.cameraContainer}
+        onCapture={onCapture}
+      />
+    </ScreenContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  root: {
+  cameraContainer: {
     flex: 1,
   },
+  cameraViewStyle: {
+    width,
+    height: width * (4 / 3),
+    borderRadius: 20,
+  },
 });
-
 export default CameraScreen;

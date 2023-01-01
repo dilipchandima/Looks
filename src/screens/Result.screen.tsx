@@ -1,15 +1,20 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text} from 'react-native';
+import {Dimensions} from 'react-native';
 
+import ScreenContainer from 'components/ScreenContainer';
 import {useImage} from 'store/useImage';
+
+const {width} = Dimensions.get('screen');
 
 const ResultScreen = () => {
   const {image} = useImage();
+
   return (
-    <View style={styles.root}>
+    <ScreenContainer>
       <Image source={{uri: image}} style={styles.logo} />
       <Text>result{image}</Text>
-    </View>
+    </ScreenContainer>
   );
 };
 
@@ -18,7 +23,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logo: {
-    flex: 1,
+    width,
+    height: width * (4 / 3),
+    borderRadius: 20,
   },
 });
 

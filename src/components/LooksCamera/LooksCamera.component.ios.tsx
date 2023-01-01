@@ -1,49 +1,64 @@
 import React from 'react';
 import {
   requireNativeComponent,
-  Button,
   StyleSheet,
   NativeModules,
+  View,
+  ViewStyle,
 } from 'react-native';
 
-import {useNavigation} from '@react-navigation/native';
-import {RESULT_SCREEN} from 'navigation/ScreenNames';
+import ShutterButton from './components/ShutterButton';
 
-const LooksCamera = requireNativeComponent('LooksCamera');
+const LooksCameraNativeComponent = requireNativeComponent('LooksCamera');
 const {LooksCameraManager} = NativeModules;
 
-console.log(LooksCameraManager);
+export type LooksCameraProps = {
+  /**
+   * Callback that is called when the user capture a image.
+   */
+  onCapture: (url: string) => void;
+  /**
+   * Outer container styles
+   */
+  containerStyle: ViewStyle;
+  /**
+   * Camera view styles
+   */
+  cameraViewStyle: ViewStyle;
+};
 
-const MyNativeView = ({setImage}) => {
-  const navigation = useNavigation();
-
+const LooksCamera = ({
+  onCapture,
+  containerStyle,
+  cameraViewStyle,
+}: LooksCameraProps) => {
   const onTake = e => {
-    setImage(e.nativeEvent.resultUrl);
+    onCapture(e.nativeEvent.resultUrl);
   };
 
   const captureImage = () => {
-    navigation.navigate(RESULT_SCREEN);
     LooksCameraManager.takePhoto();
   };
 
   return (
-    <>
-      <LooksCamera style={styles.cameraView} onResultImageExported={onTake} />
-      <Button title="PHOTO" onPress={captureImage} />
-    </>
+    <View style={containerStyle}>
+      <LooksCameraNativeComponent
+        style={cameraViewStyle}
+        onResultImageExported={onTake}
+      />
+      <View style={styles.buttonContainer}>
+        <ShutterButton onPress={captureImage} />
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-  cameraView: {
-    flex: 1,
-  },
-  logo: {
+  buttonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
     flex: 1,
   },
 });
 
-export default MyNativeView;
+export default LooksCamera;

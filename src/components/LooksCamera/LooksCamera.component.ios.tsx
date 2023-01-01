@@ -1,11 +1,10 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
+import React from 'react';
 import {
   requireNativeComponent,
   Button,
   StyleSheet,
   NativeModules,
-  Image,
 } from 'react-native';
 import {RESULT_SCREEN} from '../../navigation/ScreenNames';
 
@@ -14,8 +13,7 @@ const {LooksCameraManager} = NativeModules;
 
 console.log(LooksCameraManager);
 
-const MyNativeView = () => {
-  const [capturedImage, setImage] = useState(null);
+const MyNativeView = ({setImage}) => {
   const navigation = useNavigation();
 
   const onTake = e => {
@@ -23,19 +21,13 @@ const MyNativeView = () => {
   };
 
   const captureImage = () => {
-    setImage(null);
     navigation.navigate(RESULT_SCREEN);
     LooksCameraManager.takePhoto();
   };
 
   return (
     <>
-      <LooksCamera
-        style={styles.cameraView}
-        onResultImageExported={onTake}
-        count={20}
-      />
-      <Image style={styles.logo} source={{uri: capturedImage}} />
+      <LooksCamera style={styles.cameraView} onResultImageExported={onTake} />
       <Button title="PHOTO" onPress={captureImage} />
     </>
   );

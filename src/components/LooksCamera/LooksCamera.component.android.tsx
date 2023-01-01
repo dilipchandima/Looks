@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const MyNativeView = () => {
+const MyNativeView = ({}) => {
   return (
     <View style={styles.root}>
       <Text style={styles.text}>Android Camera is under construction</Text>

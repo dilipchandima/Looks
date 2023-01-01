@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import ImageContext, {Context, imageContextWrapper} from './Image.context';
 
 interface State {

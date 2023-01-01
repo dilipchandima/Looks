@@ -1,4 +1,3 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {
   requireNativeComponent,
@@ -6,6 +5,8 @@ import {
   StyleSheet,
   NativeModules,
 } from 'react-native';
+
+import {useNavigation} from '@react-navigation/native';
 import {RESULT_SCREEN} from 'navigation/ScreenNames';
 
 const LooksCamera = requireNativeComponent('LooksCamera');

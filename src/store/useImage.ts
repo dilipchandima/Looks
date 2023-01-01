@@ -1,4 +1,5 @@
 import {useContext} from 'react';
+
 import ImageContext from './Image.context';
 
 export const useImage = () => {

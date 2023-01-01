@@ -6,7 +6,7 @@ import {
   StyleSheet,
   NativeModules,
 } from 'react-native';
-import {RESULT_SCREEN} from '../../navigation/ScreenNames';
+import {RESULT_SCREEN} from 'navigation/ScreenNames';
 
 const LooksCamera = requireNativeComponent('LooksCamera');
 const {LooksCameraManager} = NativeModules;

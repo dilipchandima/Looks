@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import MyNativeView from '../components/LooksCamera/LooksCamera.component';
-import {useImage} from '../store/useImage';
+import MyNativeView from 'components/LooksCamera/LooksCamera.component';
+import {useImage} from 'store/useImage';
 
 const CameraScreen = () => {
   const {setImage} = useImage();

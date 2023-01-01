@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import {useImage} from '../store/useImage';
+import {useImage} from 'store/useImage';
 
 const ResultScreen = () => {
   const {image} = useImage();

@@ -28,7 +28,6 @@ class LooksCamera: UIView, ARSCNViewDelegate {
     super.init(frame: frame)
     let rect = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
     sceneView = ARSCNView(frame: rect)
-//    self.layer.cornerRadius = 25
     self.layer.masksToBounds = true;
     self.addSubview(sceneView!)
     sceneView!.delegate = self

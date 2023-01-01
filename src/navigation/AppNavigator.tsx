@@ -14,6 +14,11 @@ const Stack = createNativeStackNavigator();
 
 const screenOptions: NativeStackNavigationOptions = {headerShown: false};
 
+export type RootStackParamList = {
+  [CAMERA_SCREEN]: undefined;
+  [RESULT_SCREEN]: undefined;
+};
+
 const AppNavigator = () => {
   return (
     <ImageContextProvider>

@@ -3,7 +3,11 @@ import {StyleSheet, TouchableOpacity, View} from 'react-native';
 
 import {Colors} from 'res/Colors';
 
-const ShutterButton = ({onPress}) => {
+type Props = {
+  onPress(): void;
+};
+
+const ShutterButton = ({onPress}: Props) => {
   return (
     <View style={styles.root}>
       <TouchableOpacity style={styles.button} onPress={onPress} />

@@ -1,15 +1,19 @@
 import React from 'react';
 import {Image, StyleSheet, Text, Dimensions, View} from 'react-native';
 
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import Button from 'components/Button';
 import ScreenContainer from 'components/ScreenContainer';
+import {RootStackParamList} from 'navigation/AppNavigator';
 import ArrowLeft from 'res/icons/ArrowLeft';
 import Check from 'res/icons/Check';
 import {useImage} from 'store/useImage';
 
 const {width} = Dimensions.get('screen');
 
-const ResultScreen = ({navigation}) => {
+type Props = NativeStackScreenProps<RootStackParamList, 'ResultScreen'>;
+
+const ResultScreen = ({navigation}: Props) => {
   const {image} = useImage();
 
   const onPressRetake = () => {
@@ -26,7 +30,7 @@ const ResultScreen = ({navigation}) => {
       <Text>result{image}</Text>
       <View style={styles.buttonContainer}>
         <Button icon={<ArrowLeft />} title="Retake" onPress={onPressRetake} />
-        <Button icon={<Check />} title="Use Photo" onPress={onPressUsePhoto} />
+        <Button icon={<Check />} title="Use photo" onPress={onPressUsePhoto} />
       </View>
     </ScreenContainer>
   );

@@ -1,9 +1,16 @@
 import React from 'react';
+import type {ReactElement} from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 import {Colors} from 'res/Colors';
 
-const Button = ({onPress, title, icon}) => {
+type Props = {
+  onPress(): void;
+  title: string;
+  icon: ReactElement;
+};
+
+const Button = ({onPress, title, icon}: Props) => {
   return (
     <TouchableOpacity style={styles.root} onPress={onPress}>
       {icon}

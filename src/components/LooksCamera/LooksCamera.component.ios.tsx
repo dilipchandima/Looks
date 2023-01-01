@@ -32,7 +32,7 @@ const LooksCamera = ({
   containerStyle,
   cameraViewStyle,
 }: LooksCameraProps) => {
-  const onTake = e => {
+  const onTake = (e: any) => {
     onCapture(e.nativeEvent.resultUrl);
   };
 

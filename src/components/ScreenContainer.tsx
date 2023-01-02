@@ -1,7 +1,6 @@
 import React from 'react';
 import type {ReactElement} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {SafeAreaView} from 'react-native';
+import {StyleSheet, View, SafeAreaView} from 'react-native';
 
 import {Colors} from 'res/Colors';
 

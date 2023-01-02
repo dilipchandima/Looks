@@ -4,8 +4,8 @@ import {
   StyleSheet,
   NativeModules,
   View,
-  ViewStyle,
 } from 'react-native';
+import type {ViewStyle} from 'react-native';
 
 import ShutterButton from './components/ShutterButton';
 

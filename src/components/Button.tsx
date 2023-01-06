@@ -7,7 +7,7 @@ import {Colors} from 'res/Colors';
 type Props = {
   onPress(): void;
   title: string;
-  icon: ReactElement;
+  icon?: ReactElement;
 };
 
 const Button = ({onPress, title, icon}: Props) => {

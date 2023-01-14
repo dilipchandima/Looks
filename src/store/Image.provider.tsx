@@ -1,26 +1,18 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import type {ReactElement} from 'react';
 
-import ImageContext, {Context, imageContextWrapper} from './Image.context';
-
-interface State {
-  context: Context;
-}
+import ImageContext from './Image.context';
 
 type Props = {
   children: ReactElement[] | ReactElement;
 };
 
-export class ImageContextProvider extends Component<Props> {
-  state: State = {
-    context: imageContextWrapper(this),
-  };
+export const ImageContextProvider = ({children}: Props) => {
+  const [image, setImage] = useState('');
 
-  render() {
-    return (
-      <ImageContext.Provider value={this.state.context}>
-        {this.props.children}
-      </ImageContext.Provider>
-    );
-  }
-}
+  return (
+    <ImageContext.Provider value={{image, setImage}}>
+      {children}
+    </ImageContext.Provider>
+  );
+};

@@ -1,19 +1,10 @@
-import {Component, createContext} from 'react';
+import {createContext} from 'react';
 
 const initialImageState = {
   image: '',
+  setImage: (_: string) => {},
 };
 
-export const imageContextWrapper = (component?: Component) => ({
-  ...initialImageState,
-  setImage: (image: string) => {
-    initialImageState.image = image;
-    component?.setState({context: imageContextWrapper(component)});
-  },
-});
-
-export type Context = ReturnType<typeof imageContextWrapper>;
-
-const ImageContext = createContext<Context>(imageContextWrapper());
+const ImageContext = createContext(initialImageState);
 
 export default ImageContext;

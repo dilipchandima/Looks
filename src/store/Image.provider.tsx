@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import type {ReactElement} from 'react';
 
 import ImageContext, {Context, imageContextWrapper} from './Image.context';
 
@@ -6,7 +7,11 @@ interface State {
   context: Context;
 }
 
-export class ImageContextProvider extends Component {
+type Props = {
+  children: ReactElement[] | ReactElement;
+};
+
+export class ImageContextProvider extends Component<Props> {
   state: State = {
     context: imageContextWrapper(this),
   };
